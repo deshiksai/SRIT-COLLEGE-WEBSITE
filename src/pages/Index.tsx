@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Award, Briefcase, Calendar, BookOpen, Trophy, Building } from "lucide-react";
+import { ArrowRight, Users, Award, Briefcase, Calendar, BookOpen, Trophy, Building, ChevronLeft, ChevronRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageTransition from "@/components/layout/PageTransition";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import { useState, useEffect } from "react";
 
 const highlights = [
   {
@@ -81,58 +82,110 @@ const itemVariants = {
 };
 
 const Index = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const carouselImages = [
+    "/college%20images/SRIT-CAMPUS-IMAGE-1.jpg",
+    "/college%20images/SRIT-CAMPUS-IMAGE-2.jpg",
+    "/college%20images/SRIT-CAMPUS-IMAGE-3.jpg",
+    "/college%20images/SRIT-FEST-IMAGE-1.jpg",
+    "/college%20images/SRIT-HOSTEL-IMAGE-1.avif",
+  ];
+
+  // Auto-advance carousel every ~6.5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 6500);
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+  };
+
   return (
     <Layout>
       <PageTransition>
-        {/* Hero Section */}
-        <section className="relative min-h-[90vh] flex items-center gradient-bg overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-2xl" />
+        {/* Hero Section with Large Image Carousel */}
+        <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+          {/* Large Background Carousel */}
+          <div className="absolute inset-0 w-full h-full">
+            {carouselImages.map((image, index) => (
+              <motion.img
+                key={index}
+                src={image}
+                alt={`SRIT Campus ${index + 1}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
+                transition={{ duration: 0.8 }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            ))}
+            {/* Dark overlay for text visibility (~45% for readability) */}
+            <div className="absolute inset-0 bg-black/45" />
           </div>
 
+          {/* Navigation Arrows */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 rounded-full p-3 transition-all"
+          >
+            <ChevronLeft className="w-6 h-6 text-white" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 rounded-full p-3 transition-all"
+          >
+            <ChevronRight className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Arrows only (dots removed for minimal visual noise) */}
+
+          {/* Content Overlay */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-5xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="flex flex-col items-center gap-4">
-                  <div className="w-36 h-36 md:w-44 md:h-44 bg-white rounded p-2 shadow-md flex items-center justify-center">
-                    <img src="/images/srit-logo.png" alt="SRIT logo" className="max-w-full max-h-full object-contain" />
-                  </div>
-
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground">
+                <div className="flex flex-col items-center gap-3">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold leading-relaxed text-[#F3F4F6] max-w-4xl text-center">
                     Srinivasa Ramanujan Institute of Technology
                   </h1>
 
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Autonomous Institution | Affiliated to JNTUA | Approved by AICTE
+                  <p className="text-lg md:text-xl text-[#CBD5E1] font-normal">
+                    Autonomous Institution | AICTE Approved | NAAC Accredited
                   </p>
 
-                  <p className="text-sm text-muted-foreground mt-1">Ananthapuramu, Andhra Pradesh</p>
-
-                  <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mt-4">
-                    Empowering Knowledge at SRIT — Shaping Engineers for a Better Tomorrow.
+                  <p className="text-base md:text-lg text-[#CBD5E1] font-normal">
+                    Ananthapuramu, Andhra Pradesh
                   </p>
 
-                  <div className="flex flex-wrap gap-4 justify-center mt-6">
+                  <p className="text-2xl md:text-3xl text-[#A1A1AA] tracking-wide mt-2 font-medium">
+                    Empowering Knowledge
+                  </p>
+
+                  <div className="flex gap-4 justify-center mt-8">
                     <Link to="/about">
-                      <Button size="lg" className="btn-primary rounded-full px-8 h-12 text-base">
+                      <Button size="md" className="btn-primary rounded-full px-6 h-11 text-sm font-semibold">
                         Apply Now
-                        <ArrowRight className="ml-2 w-5 h-5" />
+                        <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </Link>
                     <Link to="/about">
                       <Button
-                          size="lg"
-                          variant="outline"
-                          className="rounded-full px-8 h-12 text-base border-2 text-foreground hover:bg-accent"
-                        >
-                          Learn More
-                        </Button>
+                        size="md"
+                        variant="outline"
+                        className="rounded-full px-6 h-11 text-sm font-semibold border-2 border-slate-300 text-slate-100 bg-transparent hover:bg-white/5"
+                      >
+                        Explore Campus
+                      </Button>
                     </Link>
                   </div>
                 </div>
@@ -140,27 +193,147 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Animated shapes */}
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-10 top-1/3 hidden lg:block"
-          >
-            <div className="w-20 h-20 bg-primary/20 rounded-2xl rotate-12" />
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-32 bottom-1/4 hidden lg:block"
-          >
-            <div className="w-12 h-12 bg-primary/30 rounded-full" />
-          </motion.div>
+          {/* Decorative animated shapes removed for a cleaner hero */}
+        </section>
+
+        {/* Credibility Highlights Strip */}
+        <section className="py-12 bg-[#F8F9FB]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                {
+                  [
+                    { icon: "🎓", title: "18+ Years", subtitle: "of Excellence" },
+                    { icon: "🏛️", title: "Autonomous", subtitle: "Institution" },
+                    { icon: "👥", title: "10,000+", subtitle: "Alumni Network" },
+                    { icon: "🔬", title: "Advanced", subtitle: "Labs & Research" },
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="text-center text-[#1F2937]"
+                    >
+                      <div className="flex items-center justify-center mb-2">
+                        <div className="w-10 h-10 rounded-md bg-orange-50 flex items-center justify-center text-[#F97316] text-lg">
+                          {item.icon}
+                        </div>
+                      </div>
+                      <div className="text-lg md:text-xl font-bold">{item.title}</div>
+                      <div className="text-sm text-[#6B7280]">{item.subtitle}</div>
+                    </motion.div>
+                  ))
+                }
+            </div>
+          </div>
+        </section>
+
+        {/* Role-Based Navigation */}
+        <section className="section-padding bg-white relative z-20 -mt-16 pt-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Explore As
+                </h2>
+                <p className="text-muted-foreground">
+                  Select your role to view relevant information
+                </p>
+              </div>
+
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid md:grid-cols-3 gap-6"
+              >
+                {/* Visitor Portal */}
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ y: -8 }}
+                  className="group relative"
+                >
+                  <Link to="/visitors">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border-2 border-transparent hover:border-blue-400 transition-all cursor-pointer h-full shadow-md hover:shadow-xl">
+                      <div className="flex flex-col items-center text-center h-full justify-between">
+                        <div>
+                          <div className="text-5xl mb-4">👨‍👩‍👧‍👦</div>
+                          <h3 className="text-2xl font-bold text-blue-900 mb-2">
+                            For Visitors
+                          </h3>
+                          <p className="text-blue-700 text-sm">
+                            Parents & prospective students exploring SRIT
+                          </p>
+                        </div>
+                        <div className="mt-6 inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:translate-x-2 transition-transform">
+                          Explore <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+
+                {/* Student Portal */}
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ y: -8 }}
+                  className="group relative"
+                >
+                  <Link to="/students">
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border-2 border-transparent hover:border-green-400 transition-all cursor-pointer h-full shadow-md hover:shadow-xl">
+                      <div className="flex flex-col items-center text-center h-full justify-between">
+                        <div>
+                          <div className="text-5xl mb-4">🎓</div>
+                          <h3 className="text-2xl font-bold text-green-900 mb-2">
+                            For Students
+                          </h3>
+                          <p className="text-green-700 text-sm">
+                            Campus life, activities & academic resources
+                          </p>
+                        </div>
+                        <div className="mt-6 inline-flex items-center gap-2 text-green-600 font-semibold group-hover:translate-x-2 transition-transform">
+                          Explore <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+
+                {/* Faculty Portal */}
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ y: -8 }}
+                  className="group relative"
+                >
+                  <Link to="/faculty">
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border-2 border-transparent hover:border-purple-400 transition-all cursor-pointer h-full shadow-md hover:shadow-xl">
+                      <div className="flex flex-col items-center text-center h-full justify-between">
+                        <div>
+                          <div className="text-5xl mb-4">👨‍🏫</div>
+                          <h3 className="text-2xl font-bold text-purple-900 mb-2">
+                            For Faculty
+                          </h3>
+                          <p className="text-purple-700 text-sm">
+                            Resources, recruitment & professional development
+                          </p>
+                        </div>
+                        <div className="mt-6 inline-flex items-center gap-2 text-purple-600 font-semibold group-hover:translate-x-2 transition-transform">
+                          Explore <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
         </section>
 
         {/* Institutional Highlights (identity badges) */}
-        <section className="py-8 bg-background/5">
+        <section className="py-8 bg-[#FFF7F2]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
                 {[
                   { title: "Established", value: "2008" },
@@ -179,36 +352,38 @@ const Index = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-6"
-            >
-              {highlights.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  variants={itemVariants}
-                  className="bg-card rounded-2xl p-6 text-center card-hover shadow-card border"
-                >
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-accent flex items-center justify-center">
-                    <stat.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
-                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-sm font-semibold text-foreground mb-1">
-                    {stat.label}
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    {stat.description}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+            <div className="bg-[#F8F9FB] rounded-2xl p-6 md:p-8">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+              >
+                {highlights.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    variants={itemVariants}
+                    className="bg-white rounded-2xl p-6 text-center shadow-sm border"
+                  >
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-orange-50 flex items-center justify-center">
+                      <stat.icon className="w-6 h-6 text-[#F97316]" />
+                    </div>
+                    <div className="text-3xl md:text-4xl font-semibold text-[#1F2937] mb-1">
+                      <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                    </div>
+                    <div className="text-sm font-medium text-[#6B7280] mb-1">
+                      {stat.label}
+                    </div>
+                    <div className="text-xs text-[#9CA3AF]">
+                      {stat.description}
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -314,12 +489,12 @@ const Index = () => {
               </div>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="relative hidden lg:block"
               >
-                <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 p-8">
+                <div className="aspect-square rounded-3xl bg-white p-8">
                   <div className="w-full h-full rounded-2xl bg-card shadow-xl flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-6xl mb-4">🎉</div>

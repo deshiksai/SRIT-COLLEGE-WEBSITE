@@ -22,6 +22,9 @@ import StudentAcademics from "./pages/student/Academics";
 import FacultyDashboard from "./pages/faculty/Dashboard";
 import AssignAttendance from "./pages/faculty/Attendance";
 import AttendanceRecords from "./pages/faculty/Records";
+import Visitors from "./pages/Visitors";
+import Students from "./pages/Students";
+import Faculty from "./pages/Faculty";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +47,9 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/login/student" element={<StudentLogin />} />
           <Route path="/login/faculty" element={<FacultyLogin />} />
+          <Route path="/visitors" element={<Visitors />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/faculty" element={<Faculty />} />
           <Route path="/student/dashboard" element={<StudentDashboard />} />
           <Route path="/student/profile" element={<StudentProfile />} />
           <Route path="/student/notices" element={<StudentNotices />} />

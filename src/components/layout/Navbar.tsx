@@ -48,13 +48,13 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <motion.div
-              whileHover={{ rotate: 10 }}
+              whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center"
+              className="w-14 h-14 rounded-lg flex items-center justify-center bg-white/10 backdrop-blur"
             >
-              <GraduationCap className="w-6 h-6 text-primary-foreground" />
+              <img src="/images/srit-logo.png" alt="SRIT logo" className="w-11 h-11 object-contain" />
             </motion.div>
             <div className="hidden sm:block">
               <span className="font-bold text-lg text-foreground">
