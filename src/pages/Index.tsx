@@ -49,18 +49,18 @@ const departments = [
 
 const upcomingEvents = [
   {
-    title: "Annual Tech Fest 2025",
-    date: "Feb 15-17, 2025",
+    title: "Annual Tech Fest 2026",
+    date: "Feb 15-17, 2026",
     type: "Festival",
   },
   {
     title: "Campus Recruitment Drive",
-    date: "Feb 20, 2025",
+    date: "Feb 20, 2026",
     type: "Placement",
   },
   {
     title: "Research Symposium",
-    date: "Mar 5, 2025",
+    date: "Mar 5, 2026",
     type: "Academic",
   },
 ];
@@ -121,7 +121,7 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8"
               >
-                Horizon College provides world-class education with modern facilities, 
+                SRIT College provides world-class education with modern facilities, 
                 experienced faculty, and industry partnerships that prepare students 
                 for successful careers.
               </motion.p>
@@ -314,7 +314,7 @@ const Index = () => {
                     <div className="text-center">
                       <div className="text-6xl mb-4">🎉</div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
-                        Tech Fest 2025
+                        Tech Fest 2026
                       </h3>
                       <p className="text-muted-foreground">Coming Soon!</p>
                     </div>
@@ -338,7 +338,7 @@ const Index = () => {
               </h2>
               <p className="text-background/70 text-lg max-w-2xl mx-auto mb-8">
                 Join thousands of students who have transformed their lives through 
-                quality education at Horizon College.
+                quality education at SRIT College.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link to="/contact">
@@ -354,7 +354,7 @@ const Index = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-background/30 text-background hover:bg-background/10 rounded-full px-8"
+                    className="border-background/30 text-background hover:bg-background/10 rounded-full px-8 text-black"
                   >
                     Learn More
                   </Button>

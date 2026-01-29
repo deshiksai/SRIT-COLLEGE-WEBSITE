@@ -29,10 +29,10 @@ const values = [
 ];
 
 const stats = [
-  { value: 35, suffix: "+", label: "Years of Excellence" },
-  { value: 500, suffix: "+", label: "Faculty Members" },
-  { value: 100, suffix: "+", label: "Industry Partners" },
-  { value: 25, suffix: "K+", label: "Alumni Network" },
+  { value: 18, suffix: "", label: "Years of Excellence" },
+  { value: 3, suffix: "", label: "National Recognitions" },
+  { value: 18, suffix: "", label: "Research Papers" },
+  { value: 5, suffix: "", label: "Patents Filed" },
 ];
 
 const containerVariants = {
@@ -59,19 +59,28 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="max-w-3xl"
+              className="max-w-5xl mx-auto"
             >
-              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                About Us
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Building Tomorrow's Leaders Since 1989
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Horizon College has been at the forefront of higher education, 
-                combining academic excellence with practical learning to prepare 
-                students for successful careers in a rapidly evolving world.
-              </p>
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="flex-shrink-0 w-28 h-28 md:w-32 md:h-32 bg-white rounded p-2 shadow-sm flex items-center justify-center">
+                  <img src="/images/srit-logo.png" alt="SRIT logo" className="max-w-full max-h-full object-contain" />
+                </div>
+
+                <div className="text-center md:text-left">
+                  <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3">
+                    About SRIT
+                  </span>
+                  <h1 className="text-3xl md:text-4xl font-bold mb-2">
+                    Srinivasa Ramanujan Institute of Technology
+                  </h1>
+                  <p className="text-lg text-muted-foreground">
+                    <strong>Location:</strong> Ananthapuramu, Andhra Pradesh • <strong>Tagline:</strong> "Empowering Knowledge"
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-3 max-w-xl">
+                    Srinivasa Ramanujan Institution of Technology (SRIT) is a premier institution committed to delivering quality technical education and fostering innovation, research, and professional excellence.
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -90,11 +99,24 @@ const About = () => {
                   <Target className="w-7 h-7 text-primary" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  To provide transformative education that empowers students with 
-                  knowledge, critical thinking skills, and ethical values, enabling 
-                  them to excel professionally and contribute meaningfully to society.
-                </p>
+                <ul className="text-muted-foreground leading-relaxed space-y-3">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    To provide quality education through well-designed curricula and effective teaching methodologies.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    To promote innovation and research through real-world problem solving.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    To strengthen industry interaction and practical exposure.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    To instill ethical values, leadership qualities, and social responsibility.
+                  </li>
+                </ul>
               </motion.div>
 
               <motion.div
@@ -108,9 +130,7 @@ const About = () => {
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be a globally recognized institution of higher learning, 
-                  producing innovative leaders and researchers who drive positive 
-                  change in their communities and industries.
+                  To emerge as a center of excellence in technical education by nurturing innovative, ethical, and competent professionals capable of addressing global challenges and contributing to societal development.
                 </p>
               </motion.div>
             </div>
@@ -189,20 +209,15 @@ const About = () => {
               >
                 <GraduationCap className="w-16 h-16 mx-auto text-primary mb-6" />
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  A Legacy of Excellence
+                  Affiliation & Approvals
                 </h2>
-                <p className="text-background/70 leading-relaxed mb-6">
-                  Founded in 1989, Horizon College started with a vision to provide 
-                  quality education accessible to all. What began as a small institution 
-                  with just 200 students has grown into a prestigious college with over 
-                  5,000 students across multiple disciplines.
-                </p>
-                <p className="text-background/70 leading-relaxed">
-                  Over the decades, we have produced thousands of successful graduates 
-                  who are now leaders in their respective fields, contributing to 
-                  society and carrying forward the values instilled during their time 
-                  at Horizon College.
-                </p>
+                <div className="space-y-3 text-background/70 leading-relaxed">
+                  <p><strong className="text-background">Affiliated to:</strong> Jawaharlal Nehru Technological University, Anantapur (JNTUA)</p>
+                  <p><strong className="text-background">Approved by:</strong> AICTE (All India Council for Technical Education)</p>
+                  <p><strong className="text-background">Recognized by:</strong> UGC (University Grants Commission)</p>
+                  <p><strong className="text-background">Accreditation:</strong> NAAC (A Grade), NBA (Selected Undergraduate Programs)</p>
+                  <p className="text-sm italic mt-4">📌 <em>Details shown are for prototype representation.</em></p>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -212,8 +227,8 @@ const About = () => {
         <section className="section-padding">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              title="Campus Facilities"
-              subtitle="State-of-the-art infrastructure for holistic development"
+              title="Why Choose SRIT?"
+              subtitle="Excellence in technical education and innovation"
             />
 
             <motion.div
@@ -224,12 +239,12 @@ const About = () => {
               className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {[
-                { icon: "📚", title: "Digital Library", desc: "100,000+ books and e-resources" },
-                { icon: "🔬", title: "Research Labs", desc: "25+ advanced laboratories" },
-                { icon: "🏃", title: "Sports Complex", desc: "Multi-sport facilities" },
-                { icon: "🏠", title: "Hostels", desc: "Comfortable accommodation" },
-                { icon: "🍽️", title: "Cafeteria", desc: "Hygienic food services" },
-                { icon: "🏥", title: "Health Center", desc: "24/7 medical support" },
+                { icon: "🏆", title: "NAAC Accredited", desc: "A Grade accreditation for quality standards" },
+                { icon: "🎓", title: "NBA Accredited Programs", desc: "Outcome-based engineering education" },
+                { icon: "🔬", title: "Research Excellence", desc: "18 research papers published" },
+                { icon: "🤝", title: "Industry Partnerships", desc: "Strong industry collaboration" },
+                { icon: "💡", title: "Innovation Focus", desc: "5 patents filed for research innovation" },
+                { icon: "🌍", title: "Global Recognition", desc: "EduSkills Summit 2025 recognition" },
               ].map((facility) => (
                 <motion.div
                   key={facility.title}

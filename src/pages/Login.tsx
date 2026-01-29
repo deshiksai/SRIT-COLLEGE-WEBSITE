@@ -83,8 +83,8 @@ const Login = () => {
               className="text-center text-sm text-muted-foreground mt-8"
             >
               Need help? Contact the IT helpdesk at{" "}
-              <a href="mailto:support@horizoncollege.edu" className="text-primary hover:underline">
-                support@horizoncollege.edu
+              <a href="mailto:support@sritcollege.edu" className="text-primary hover:underline">
+                support@sritcollege.edu
               </a>
             </motion.p>
           </div>

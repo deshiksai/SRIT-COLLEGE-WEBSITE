@@ -5,8 +5,8 @@ import DashboardLayout from "@/components/dashboard/DashboardLayout";
 const events = [
   {
     id: 1,
-    title: "Annual Tech Fest 2025",
-    date: "Feb 15-17, 2025",
+    title: "Annual Tech Fest 2026",
+    date: "Feb 15-17, 2026",
     time: "9:00 AM - 6:00 PM",
     location: "Main Campus",
     category: "Festival",
@@ -16,7 +16,7 @@ const events = [
   {
     id: 2,
     title: "Campus Recruitment Drive",
-    date: "Feb 20, 2025",
+    date: "Feb 20, 2026",
     time: "10:00 AM",
     location: "Placement Cell",
     category: "Placement",
@@ -25,8 +25,8 @@ const events = [
   },
   {
     id: 3,
-    title: "Research Symposium 2025",
-    date: "Mar 5, 2025",
+    title: "Research Symposium 2026",
+    date: "Mar 5, 2026",
     time: "9:00 AM - 5:00 PM",
     location: "Auditorium",
     category: "Academic",
@@ -35,8 +35,8 @@ const events = [
   },
   {
     id: 4,
-    title: "Alumni Meet 2025",
-    date: "Mar 15, 2025",
+    title: "Alumni Meet 2026",
+    date: "Mar 15, 2026",
     time: "4:00 PM",
     location: "Convention Hall",
     category: "Social",

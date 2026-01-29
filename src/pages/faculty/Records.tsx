@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 
 const records = [
-  { date: "Jan 29, 2025", class: "CSE 6A", subject: "Machine Learning", present: 28, absent: 2, percentage: 93 },
-  { date: "Jan 28, 2025", class: "CSE 6A", subject: "Machine Learning", present: 27, absent: 3, percentage: 90 },
-  { date: "Jan 27, 2025", class: "CSE 6B", subject: "Cloud Computing", present: 30, absent: 0, percentage: 100 },
-  { date: "Jan 26, 2025", class: "CSE 6A", subject: "Machine Learning", present: 26, absent: 4, percentage: 87 },
+  { date: "Jan 30, 2026", class: "CSE 6A", subject: "Machine Learning", present: 30, absent: 0, percentage: 100 },
+  { date: "Jan 29, 2026", class: "CSE 6A", subject: "Machine Learning", present: 28, absent: 2, percentage: 93 },
+  { date: "Jan 28, 2026", class: "CSE 6A", subject: "Machine Learning", present: 27, absent: 3, percentage: 90 },
+  { date: "Jan 27, 2026", class: "CSE 6B", subject: "Cloud Computing", present: 30, absent: 0, percentage: 100 },
+  { date: "Jan 26, 2026", class: "CSE 6A", subject: "Machine Learning", present: 26, absent: 4, percentage: 87 },
 ];
 
 const AttendanceRecords = () => {

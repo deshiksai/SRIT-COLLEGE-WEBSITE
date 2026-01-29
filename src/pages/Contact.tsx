@@ -21,7 +21,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    content: "info@horizoncollege.edu\nadmissions@horizoncollege.edu",
+    content: "info@sritcollege.edu\nadmissions@sritcollege.edu",
   },
   {
     icon: Clock,
@@ -31,10 +31,10 @@ const contactInfo = [
 ];
 
 const departments = [
-  { name: "Admissions Office", email: "admissions@horizoncollege.edu" },
-  { name: "Placement Cell", email: "placements@horizoncollege.edu" },
-  { name: "Examination Department", email: "exams@horizoncollege.edu" },
-  { name: "Student Affairs", email: "studentaffairs@horizoncollege.edu" },
+  { name: "Admissions Office", email: "admissions@sritcollege.edu" },
+  { name: "Placement Cell", email: "placements@sritcollege.edu" },
+  { name: "Examination Department", email: "exams@sritcollege.edu" },
+  { name: "Student Affairs", email: "studentaffairs@sritcollege.edu" },
 ];
 
 const Contact = () => {

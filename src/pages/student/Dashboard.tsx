@@ -4,8 +4,8 @@ import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 const studentInfo = {
-  name: "John Smith",
-  rollNumber: "CSE2022001",
+  name: "Deshik sai",
+  rollNumber: "244G1A0578",
   department: "Computer Science & Engineering",
   semester: "6th Semester",
   year: "3rd Year",
@@ -47,13 +47,13 @@ const dashboardCards = [
 ];
 
 const latestNotices = [
-  { id: 1, title: "Semester Examination Schedule Released", date: "Jan 28, 2025", priority: "high" },
-  { id: 2, title: "Campus Recruitment Drive - February", date: "Jan 27, 2025", priority: "high" },
-  { id: 3, title: "Library Extended Hours During Exams", date: "Jan 26, 2025", priority: "medium" },
+  { id: 1, title: "Semester Examination Schedule Released", date: "Jan 28, 2026", priority: "high" },
+  { id: 2, title: "Campus Recruitment Drive - February", date: "Jan 27, 2026", priority: "high" },
+  { id: 3, title: "Library Extended Hours During Exams", date: "Jan 26, 2026", priority: "medium" },
 ];
 
 const upcomingEvents = [
-  { id: 1, title: "Tech Fest 2025", date: "Feb 15-17", type: "Festival" },
+  { id: 1, title: "Tech Fest 2026", date: "Feb 15-17", type: "Festival" },
   { id: 2, title: "Campus Recruitment", date: "Feb 20", type: "Placement" },
   { id: 3, title: "Research Symposium", date: "Mar 5", type: "Academic" },
 ];

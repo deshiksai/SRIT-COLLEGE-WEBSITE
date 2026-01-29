@@ -229,7 +229,7 @@ const Placements = () => {
                     <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mb-4">
                       {item.step}
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-white">{item.title}</h3>
                     <p className="text-background/70 text-sm">{item.desc}</p>
                   </div>
                 </motion.div>

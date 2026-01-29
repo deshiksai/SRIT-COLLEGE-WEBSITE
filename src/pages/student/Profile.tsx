@@ -3,19 +3,19 @@ import { User, Mail, Phone, MapPin, Calendar, BookOpen, Award } from "lucide-rea
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 
 const studentProfile = {
-  name: "John Smith",
-  rollNumber: "CSE2022001",
-  email: "john.smith@horizoncollege.edu",
-  phone: "+1 234 567 8900",
+  name: "Deshik sai",
+  rollNumber: "244G1AO578",
+  email: "244G1A0578@srit.ac.in",
+  phone: "+91 1234567890",
   address: "123 Student Housing, Academic City",
-  dob: "January 15, 2002",
+  dob: "January 15, 2005",
   department: "Computer Science & Engineering",
   year: "3rd Year",
   semester: "6th Semester",
   batch: "2022-2026",
-  bloodGroup: "O+",
-  guardian: "Mr. Robert Smith",
-  guardianPhone: "+1 234 567 8901",
+  bloodGroup: "B+",
+  guardian: "Mr. Prasad",
+  guardianPhone: "+91 234 567 8901",
 };
 
 const academicInfo = {

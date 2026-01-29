@@ -41,7 +41,7 @@ const Footer = () => {
                 <GraduationCap className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <span className="font-bold text-lg">Horizon</span>
+                <span className="font-bold text-lg">SRIT</span>
                 <span className="font-bold text-lg text-primary"> College</span>
               </div>
             </Link>
@@ -116,7 +116,7 @@ const Footer = () => {
               <li className="flex gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <span className="text-background/70 text-sm">
-                  info@horizoncollege.edu
+                  info@SRITcollege.edu
                 </span>
               </li>
             </ul>
@@ -126,7 +126,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/60 text-sm">
-            © {currentYear} Horizon College. All rights reserved.
+            © {currentYear} SRIT College. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link to="#" className="text-background/60 hover:text-primary text-sm transition-colors">

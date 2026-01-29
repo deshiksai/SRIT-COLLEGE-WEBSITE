@@ -8,7 +8,7 @@ const notices = [
   {
     id: 1,
     title: "Semester Examination Schedule Released",
-    date: "Jan 28, 2025",
+    date: "Jan 28, 2026",
     category: "Academic",
     priority: "high",
     content: "The schedule for end-semester examinations has been released. Students are advised to check the examination portal.",
@@ -16,8 +16,8 @@ const notices = [
   },
   {
     id: 2,
-    title: "Campus Recruitment Drive - February 2025",
-    date: "Jan 27, 2025",
+    title: "Campus Recruitment Drive - February 2026",
+    date: "Jan 27, 2026",
     category: "Placement",
     priority: "high",
     content: "Multiple companies including Google, Microsoft, and Amazon will be visiting campus for recruitment.",
@@ -26,7 +26,7 @@ const notices = [
   {
     id: 3,
     title: "Library Extended Hours During Exams",
-    date: "Jan 26, 2025",
+    date: "Jan 26, 2026",
     category: "General",
     priority: "medium",
     content: "The central library will remain open until 11 PM during the examination period.",
@@ -35,19 +35,19 @@ const notices = [
   {
     id: 4,
     title: "Fee Payment Deadline Extension",
-    date: "Jan 25, 2025",
+    date: "Jan 25, 2026",
     category: "Finance",
     priority: "high",
-    content: "The deadline for semester fee payment has been extended to February 5, 2025.",
+    content: "The deadline for semester fee payment has been extended to February 5, 2026.",
     isRead: true,
   },
   {
     id: 5,
-    title: "Tech Fest 2025 Registration Open",
-    date: "Jan 24, 2025",
+    title: "Tech Fest 2026 Registration Open",
+    date: "Jan 24, 2026",
     category: "Events",
     priority: "medium",
-    content: "Registration for Tech Fest 2025 is now open. Early bird discounts available until Feb 1.",
+    content: "Registration for Tech Fest 2026 is now open. Early bird discounts available until Feb 1.",
     isRead: true,
   },
 ];

@@ -58,7 +58,7 @@ const Navbar = () => {
             </motion.div>
             <div className="hidden sm:block">
               <span className="font-bold text-lg text-foreground">
-                Horizon
+                SRIT
               </span>
               <span className="font-bold text-lg text-primary"> College</span>
             </div>

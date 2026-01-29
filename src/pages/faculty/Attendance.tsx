@@ -55,7 +55,7 @@ const AssignAttendance = () => {
             <div className="space-y-2">
               <Label>Date</Label>
               <Select><SelectTrigger><SelectValue placeholder="Select date" /></SelectTrigger>
-                <SelectContent><SelectItem value="today">Jan 29, 2025</SelectItem><SelectItem value="yesterday">Jan 28, 2025</SelectItem></SelectContent>
+                <SelectContent><SelectItem value="today">Jan 29, 2026</SelectItem><SelectItem value="yesterday">Jan 28, 2026</SelectItem></SelectContent>
               </Select>
             </div>
           </div>
