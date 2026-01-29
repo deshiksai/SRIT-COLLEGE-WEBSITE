@@ -155,7 +155,7 @@ const Index = () => {
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex flex-col items-center gap-3">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold leading-relaxed text-[#F3F4F6] max-w-4xl text-center">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-wide leading-relaxed text-[#F3F4F6] max-w-4xl text-center">
                     Srinivasa Ramanujan Institute of Technology
                   </h1>
 
@@ -196,38 +196,7 @@ const Index = () => {
           {/* Decorative animated shapes removed for a cleaner hero */}
         </section>
 
-        {/* Credibility Highlights Strip */}
-        <section className="py-12 bg-[#F8F9FB]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                {
-                  [
-                    { icon: "🎓", title: "18+ Years", subtitle: "of Excellence" },
-                    { icon: "🏛️", title: "Autonomous", subtitle: "Institution" },
-                    { icon: "👥", title: "10,000+", subtitle: "Alumni Network" },
-                    { icon: "🔬", title: "Advanced", subtitle: "Labs & Research" },
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="text-center text-[#1F2937]"
-                    >
-                      <div className="flex items-center justify-center mb-2">
-                        <div className="w-10 h-10 rounded-md bg-orange-50 flex items-center justify-center text-[#F97316] text-lg">
-                          {item.icon}
-                        </div>
-                      </div>
-                      <div className="text-lg md:text-xl font-bold">{item.title}</div>
-                      <div className="text-sm text-[#6B7280]">{item.subtitle}</div>
-                    </motion.div>
-                  ))
-                }
-            </div>
-          </div>
-        </section>
+        {/* Credibility Highlights Strip removed per user request */}
 
         {/* Role-Based Navigation */}
         <section className="section-padding bg-white relative z-20 -mt-16 pt-24">
@@ -488,24 +457,14 @@ const Index = () => {
                 </div>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="relative hidden lg:block"
-              >
-                <div className="aspect-square rounded-3xl bg-white p-8">
-                  <div className="w-full h-full rounded-2xl bg-card shadow-xl flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-6xl mb-4">🎉</div>
-                      <h3 className="text-2xl font-bold text-foreground mb-2">
-                        Tech Fest 2026
-                      </h3>
-                      <p className="text-muted-foreground">Coming Soon!</p>
-                    </div>
-                  </div>
+              <div className="relative hidden lg:flex items-center justify-center">
+                <div className="w-full max-w-md rounded-2xl bg-[#FFF7ED] p-8 shadow-sm border-l-4 border-l-[#F97316] flex flex-col items-center text-center">
+                  <div className="text-xs text-[#6B7280] uppercase mb-3">Upcoming Highlight</div>
+                  <div className="text-6xl mb-4">🎉</div>
+                  <h3 className="text-2xl font-semibold text-[#1F2937] mb-2">Tech Fest 2026</h3>
+                  <p className="text-sm text-[#6B7280]">Coming Soon!</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
