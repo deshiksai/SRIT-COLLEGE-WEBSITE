@@ -93,60 +93,49 @@ const Index = () => {
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-4xl">
+            <div className="max-w-4xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                  🎓 Welcome to Excellence
-                </span>
-              </motion.div>
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-36 h-36 md:w-44 md:h-44 bg-white rounded p-2 shadow-md flex items-center justify-center">
+                    <img src="/images/srit-logo.png" alt="SRIT logo" className="max-w-full max-h-full object-contain" />
+                  </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
-              >
-                Shaping{" "}
-                <span className="gradient-text">Future Leaders</span>{" "}
-                Through Excellence
-              </motion.h1>
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground">
+                    Srinivasa Ramanujan Institute of Technology
+                  </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8"
-              >
-                SRIT College provides world-class education with modern facilities, 
-                experienced faculty, and industry partnerships that prepare students 
-                for successful careers.
-              </motion.p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Autonomous Institution | Affiliated to JNTUA | Approved by AICTE
+                  </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-wrap gap-4"
-              >
-                <Link to="/about">
-                  <Button size="lg" className="btn-primary rounded-full px-8 h-12 text-base">
-                    Explore Campus
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <Link to="/departments">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="rounded-full px-8 h-12 text-base border-2 hover:bg-accent"
-                  >
-                    View Departments
-                  </Button>
-                </Link>
+                  <p className="text-sm text-muted-foreground mt-1">Ananthapuramu, Andhra Pradesh</p>
+
+                  <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mt-4">
+                    Empowering Knowledge at SRIT — Shaping Engineers for a Better Tomorrow.
+                  </p>
+
+                  <div className="flex flex-wrap gap-4 justify-center mt-6">
+                    <Link to="/about">
+                      <Button size="lg" className="btn-primary rounded-full px-8 h-12 text-base">
+                        Apply Now
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                      </Button>
+                    </Link>
+                    <Link to="/about">
+                      <Button
+                          size="lg"
+                          variant="outline"
+                          className="rounded-full px-8 h-12 text-base border-2 text-foreground hover:bg-accent"
+                        >
+                          Learn More
+                        </Button>
+                    </Link>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -166,6 +155,27 @@ const Index = () => {
           >
             <div className="w-12 h-12 bg-primary/30 rounded-full" />
           </motion.div>
+        </section>
+
+        {/* Institutional Highlights (identity badges) */}
+        <section className="py-8 bg-background/5">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                {[
+                  { title: "Established", value: "2008" },
+                  { title: "Programs Offered", value: "UG & PG" },
+                  { title: "Accreditation", value: "AICTE Approved" },
+                  { title: "Placements", value: "Active Industry Collaborations" },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-card rounded-2xl p-4 flex flex-col items-center text-center border">
+                    <div className="text-sm text-muted-foreground mb-2">{item.title}</div>
+                    <div className="text-lg font-semibold text-foreground">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Stats Section */}
